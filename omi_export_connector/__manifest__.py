@@ -43,7 +43,7 @@ to perform the actual validation. A free tier is available. No account
 or payment is required to install or use the export wizard itself.
 """,
     "author": "icwtok-cloud",
-    "license": "LGPL-3",
+    "license": "OPL-1",
     "website": "https://omi.lat",
     "support": "soporte@omi.lat",
     # URL de instancia demo donde se puede probar el wizard funcionando
