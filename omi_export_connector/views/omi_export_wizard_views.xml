@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_omi_export_wizard_form" model="ir.ui.view">
+        <field name="name">omi.export.wizard.form</field>
+        <field name="model">omi.export.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Export &amp; Validate with OMI">
+                <sheet>
+                    <group>
+                        <field name="omi_module" invisible="state == 'done'"/>
+                        <field name="domain_filter" invisible="state == 'done'"
+                               placeholder="[('active','=',True)]"/>
+                    </group>
+
+                    <div class="alert alert-info" role="alert" invisible="state == 'done'">
+                        This exports your data in the exact format OMI's validation
+                        engine expects for this module. After exporting, you'll get a
+                        button to open OMI (an independent external service,
+                        <a href="https://omi.lat" target="_blank">omi.lat</a>) where you
+                        can upload the file and see a free validation report before
+                        importing or paying anything.
+                    </div>
+
+                    <group invisible="state != 'done'">
+                        <field name="export_filename" readonly="1"/>
+                        <field name="export_file" filename="export_filename" readonly="1"/>
+                    </group>
+
+                    <div class="alert alert-success" role="alert" invisible="state != 'done'">
+                        Your file is ready. Download it above, then click
+                        "Open OMI to Validate" to upload it and see the full report.
+                    </div>
+                </sheet>
+                <footer>
+                    <button name="action_export" type="object" string="Export"
+                            class="btn-primary" invisible="state == 'done'"/>
+                    <button name="action_open_omi" type="object"
+                            string="Open OMI to Validate" class="btn-primary"
+                            invisible="state != 'done'"/>
+                    <button string="Close" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_omi_export_wizard" model="ir.actions.act_window">
+        <field name="name">Export &amp; Validate with OMI</field>
+        <field name="res_model">omi.export.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <!-- Entrada de menú dentro de Contactos (contacts está en depends,
+         así que este parent siempre existe). Se agrega UNA sola
+         entrada segura en vez de una por módulo de cara al usuario,
+         porque los demás (crm, sale, account, stock, purchase) son
+         módulos opcionales que este conector no puede asumir
+         instalados sin forzarlos como dependencia dura. -->
+    <menuitem id="menu_omi_export_contacts"
+              name="Export &amp; Validate with OMI"
+              parent="contacts.menu_contacts"
+              action="action_omi_export_wizard"
+              sequence="100"/>
+
+</odoo>
