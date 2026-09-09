@@ -3,12 +3,12 @@
     # Nombre <=25 caracteres, sin nombre de la empresa (icwtok-cloud),
     # sin adjetivos -- OMI es el nombre del servicio destino, no la
     # empresa vendedora, así que es válido incluirlo (ver guidelines).
-    "name": "Export Data to OMI",
+    "name": "Validate Data with OMI",
     # Semver Odoo: <serie_odoo>.<major>.<minor>.<bugfix> -- se actualiza
     # el prefijo en cada rama de versión (18.0.x en esta rama).
     "version": "18.0.1.0.0",
     "category": "Extra Tools",
-    "summary": "Export and pre-validate your data before importing into Odoo",
+    "summary": "Validate Data Before Importing Into Odoo",
     "description": """
 Export & Validate Data Before Importing Into Odoo
 ==================================================
