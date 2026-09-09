@@ -48,7 +48,7 @@ or payment is required to install or use the export wizard itself.
     "support": "soporte@omi.lat",
     # URL de instancia demo donde se puede probar el wizard funcionando
     # de verdad antes de instalar -- pedido opcional del manifest.
-    "live_test_url": "https://omi.lat/guias/preparar-datos-para-importar-en-odoo",
+    "live_test_url": "https://omi.lat",
     "depends": ["base", "contacts"],
     "data": [
         "security/ir.model.access.csv",
