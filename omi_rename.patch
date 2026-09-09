@@ -1,0 +1,32 @@
+diff --git a/omi_export_connector/__manifest__.py b/omi_export_connector/__manifest__.py
+index f2169ed..0b2e358 100644
+--- a/omi_export_connector/__manifest__.py
++++ b/omi_export_connector/__manifest__.py
+@@ -3,12 +3,12 @@
+     # Nombre <=25 caracteres, sin nombre de la empresa (icwtok-cloud),
+     # sin adjetivos -- OMI es el nombre del servicio destino, no la
+     # empresa vendedora, así que es válido incluirlo (ver guidelines).
+-    "name": "Export Data to OMI",
++    "name": "Validate Data with OMI",
+     # Semver Odoo: <serie_odoo>.<major>.<minor>.<bugfix> -- se actualiza
+     # el prefijo en cada rama de versión (18.0.x en esta rama).
+     "version": "19.0.1.0.0",
+     "category": "Extra Tools",
+-    "summary": "Export and pre-validate your data before importing into Odoo",
++    "summary": "Validate Data Before Importing Into Odoo",
+     "description": """
+ Export & Validate Data Before Importing Into Odoo
+ ==================================================
+diff --git a/omi_export_connector/static/description/index.html b/omi_export_connector/static/description/index.html
+index 154232f..907ff88 100644
+--- a/omi_export_connector/static/description/index.html
++++ b/omi_export_connector/static/description/index.html
+@@ -1,7 +1,7 @@
+ <section class="oe_container">
+     <div class="row">
+         <div class="col-12">
+-            <h2 class="text-center">Export &amp; Validate Data Before Importing Into Odoo</h2>
++            <h2 class="text-center">Validate Data Before Importing Into Odoo</h2>
+             <h4 class="text-center text-muted">
+                 Catch import errors before they happen — free validation report included.
+             </h4>
